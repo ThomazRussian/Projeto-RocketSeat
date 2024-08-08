@@ -1,9 +1,4 @@
 .post {
-<<<<<<< HEAD
-    color: var(--white);
-
-}
-=======
     background: var(--gray-800);
     color: var(--white);
     border-radius: 8px;
@@ -115,6 +110,3 @@
 .commentForm button[type=submit]:hover {
     background: var(--green-300);
 }
-
-
->>>>>>> 7f0e10d36d712d881ecd35b64628d66ff7c01e6b

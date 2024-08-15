@@ -4,6 +4,42 @@ import{ Post } from './components/Post';
 import { Sidebar } from './components/Sidebar'
 import styles from './App.module.css'
 import './global.css'
+
+// author: {avatar_url:"", name: "", role: ""}
+// publishedAt: Date
+// content: String
+
+const posts = [
+  {
+  id: 1,
+  author: {
+    avatarUrl: 'https://github.com/ThomazRussian.png',
+    name: 'Thomaz Russian',
+    role: 'Ignite User'
+  },
+  content: [
+    { type: 'paragraph', content: 'Fala galeraa 👋' },
+    { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+    { type: 'link', content: 'jane.design/doctorcare' },
+  ],
+  publishedAt: new Date('2022-05-03 20:00:00')
+  },
+  {
+  id: 2,
+  author: {
+    avatarUrl: 'https://github.com/diego3g.png',
+    name: 'Diego Fernandes',
+    role: 'CTO @Rocketseat'
+  },
+  content: [
+    { type: 'paragraph', content: 'Fala galeraa 👋' },
+    { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+    { type: 'link', content: 'jane.design/doctorcare' },
+  ],
+  publishedAt: new Date('2024-08-13 20:00:00')
+  },
+];
+
 export function App() {
   return (
     <div>
@@ -13,14 +49,19 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post 
-            author = "Thomaz Russian"
-            content = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita id inventore ratione nam quam cumque nulla aspernatur voluptates odit, dolores in a eligendi, iusto ad, itaque nemo. Veritatis, mollitia voluptate."
-            />
-          <Post
-            author = "Gabriel Buzzi"
-            content = "Um novo post muito legal"
-            />
+          {posts.map(post => {
+            return (
+              <Post 
+              author={post.author}
+              content={post.content}
+              publishedAT={post.publishedAt}
+            
+            
+              />
+          )
+
+
+          })}
           </main>
         </div>
     </div>
